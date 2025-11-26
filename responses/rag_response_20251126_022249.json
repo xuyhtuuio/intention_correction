@@ -1,0 +1,1 @@
+"{\n  \"thinking\": \"用户查询'M域有哪些五星的标签资产'明确指出了业务域(M域)、资产类型(标签)以及质量筛选条件(五星)三个关键信息。'有哪些'表明用户需要进行资产检索，'五星'是质量评分的筛选条件。这是典型的资产基础检索场景，符合Intent 31的定义。从查询中提取出三个槽位：BusinessDomain=M域，AssetType=标签，FilterCondition=五星。关键词匹配准确，意图判断清晰，置信度高。\",\n  \"intent\": \"31\",\n  \"slots\": {\"BusinessDomain\": \"M域\", \"AssetType\": \"标签\", \"FilterCondition\": \"五星\"},\n  \"query\": \"M域有哪些五星的标签资产?\"\n}"

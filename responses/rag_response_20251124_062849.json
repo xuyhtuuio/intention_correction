@@ -1,0 +1,5 @@
+{
+  "query": "家庭资产的用途",
+  "response": "{\"intent\": \"32\", \"slots\": {\"AssetName\": \"家庭资产\", \"MetadataItem\": \"简介/用途\"}, \"query\": \"家庭资产的用途\"}",
+  "timestamp": "2025-11-24T06:28:49.143962"
+}

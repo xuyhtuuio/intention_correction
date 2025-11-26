@@ -1,0 +1,1 @@
+"{\"intent\": \"50\", \"slots\": [{\"intent\": \"31\", \"slots\": {\"OwnerTenant\": \"总部\"}}, {\"intent\": \"34\", \"slots\": {\"AssetName\": \"家庭圈模型\", \"LineageDirection\": \"血缘关系\"}}], \"query\": \"查询总部租户的资产,另外查询家庭圈模型的血缘关系\"}"

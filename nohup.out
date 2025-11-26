@@ -1,0 +1,83 @@
+nohup: ignoring input
+2025-11-20 09:51:03,166 - INFO - 启动Flask RAG API服务...
+2025-11-20 09:51:03,166 - INFO - 初始化RAG服务...
+2025-11-20 09:51:03,166 - INFO - 正在连接Milvus Lite数据库: ./milvus.db
+/root/miniconda3/envs/modelscope/lib/python3.10/site-packages/milvus_lite/__init__.py:15: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import DistributionNotFound, get_distribution
+2025-11-20 09:51:03,722 - INFO - 集合包含 85 个实体
+2025-11-20 09:51:03,722 - INFO - 成功连接到Milvus Lite集合: intention
+2025-11-20 09:51:03,722 - INFO - RAG服务初始化成功
+2025-11-20 09:51:03,722 - INFO - Milvus Lite连接正常
+ * Serving Flask app 'flask_api'
+ * Debug mode: off
+2025-11-20 09:51:03,723 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:54111
+ * Running on http://192.168.255.251:54111
+2025-11-20 09:51:03,723 - INFO - [33mPress CTRL+C to quit[0m
+2025-11-20 09:52:23,106 - INFO - 收到RAG查询请求: 我想找一个资产，我记得是总部软研院的，而且是DWD的，这个资产是哪个？...
+2025-11-20 09:52:23,107 - INFO - 开始RAG查询: 我想找一个资产，我记得是总部软研院的，而且是DWD的，这个资产是哪个？
+2025-11-20 09:52:23,107 - INFO - 正在获取查询向量...
+2025-11-20 09:52:23,144 - INFO - 集合包含 85 个实体
+2025-11-20 09:52:23,144 - INFO - 开始向量搜索，返回 5 个结果...
+2025-11-20 09:52:23,399 - INFO - 向量搜索返回 5 个文档
+2025-11-20 09:52:23,399 - INFO - 召回到 5 个文档
+2025-11-20 09:52:23,399 - INFO - 调用rerank API: http://localhost:54113/v1/rerank
+2025-11-20 09:52:23,399 - INFO - 查询内容: 我想找一个资产，我记得是总部软研院的，而且是DWD的，这个资产是哪个？...
+2025-11-20 09:52:23,402 - ERROR - Rerank API调用失败，状态码: 404, 响应: {"error":{"message":"The model `bge-reranker-v2-m3` does not exist.","type":"NotFoundError","param":null,"code":404}}
+2025-11-20 09:52:23,402 - INFO - 重排序失败，使用前5个召回文档
+2025-11-20 09:52:23,402 - ERROR - RAG查询失败: name 'false' is not defined
+2025-11-20 09:52:23,403 - ERROR - 错误详情: Traceback (most recent call last):
+  File "/data/intention_correction/flask_api.py", line 189, in rag_query
+    response = service.rag_query(
+  File "/data/intention_correction/llm_milvuslite.py", line 569, in rag_query
+    response = self.call_llm(rag_prompt, temperature)
+  File "/data/intention_correction/llm_milvuslite.py", line 272, in call_llm
+    "chat_template_kwargs": {"enable_thinking": false}
+NameError: name 'false' is not defined
+
+2025-11-20 09:52:23,403 - INFO - 127.0.0.1 - - [20/Nov/2025 09:52:23] "[35m[1mPOST /rag_query HTTP/1.1[0m" 500 -
+2025-11-20 09:58:53,806 - INFO - 收到RAG查询请求: 我想找一个资产，我记得是总部软研院的，而且是DWD的，这个资产是哪个？...
+2025-11-20 09:58:53,806 - INFO - 开始RAG查询: 我想找一个资产，我记得是总部软研院的，而且是DWD的，这个资产是哪个？
+2025-11-20 09:58:53,806 - INFO - 正在获取查询向量...
+2025-11-20 09:58:53,843 - INFO - 集合包含 85 个实体
+2025-11-20 09:58:53,843 - INFO - 开始向量搜索，返回 5 个结果...
+2025-11-20 09:58:53,845 - INFO - 向量搜索返回 5 个文档
+2025-11-20 09:58:53,845 - INFO - 召回到 5 个文档
+2025-11-20 09:58:53,845 - INFO - 调用rerank API: http://localhost:54113/v1/rerank
+2025-11-20 09:58:53,845 - INFO - 查询内容: 我想找一个资产，我记得是总部软研院的，而且是DWD的，这个资产是哪个？...
+2025-11-20 09:58:53,848 - ERROR - Rerank API调用失败，状态码: 404, 响应: {"error":{"message":"The model `bge-reranker-v2-m3` does not exist.","type":"NotFoundError","param":null,"code":404}}
+2025-11-20 09:58:53,848 - INFO - 重排序失败，使用前5个召回文档
+2025-11-20 09:58:53,848 - ERROR - RAG查询失败: name 'false' is not defined
+2025-11-20 09:58:53,848 - ERROR - 错误详情: Traceback (most recent call last):
+  File "/data/intention_correction/flask_api.py", line 189, in rag_query
+    response = service.rag_query(
+  File "/data/intention_correction/llm_milvuslite.py", line 569, in rag_query
+    response = self.call_llm(rag_prompt, temperature)
+  File "/data/intention_correction/llm_milvuslite.py", line 272, in call_llm
+    "chat_template_kwargs": {"enable_thinking": False}
+NameError: name 'false' is not defined
+
+2025-11-20 09:58:53,849 - INFO - 127.0.0.1 - - [20/Nov/2025 09:58:53] "[35m[1mPOST /rag_query HTTP/1.1[0m" 500 -
+2025-11-20 10:03:21,748 - INFO - 收到RAG查询请求: 我想找一个资产，我记得是总部软研院的，而且是DWD的，这个资产是哪个？...
+2025-11-20 10:03:21,748 - INFO - 开始RAG查询: 我想找一个资产，我记得是总部软研院的，而且是DWD的，这个资产是哪个？
+2025-11-20 10:03:21,748 - INFO - 正在获取查询向量...
+2025-11-20 10:03:21,785 - INFO - 集合包含 85 个实体
+2025-11-20 10:03:21,785 - INFO - 开始向量搜索，返回 5 个结果...
+2025-11-20 10:03:21,787 - INFO - 向量搜索返回 5 个文档
+2025-11-20 10:03:21,787 - INFO - 召回到 5 个文档
+2025-11-20 10:03:21,787 - INFO - 调用rerank API: http://localhost:54113/v1/rerank
+2025-11-20 10:03:21,787 - INFO - 查询内容: 我想找一个资产，我记得是总部软研院的，而且是DWD的，这个资产是哪个？...
+2025-11-20 10:03:21,789 - ERROR - Rerank API调用失败，状态码: 404, 响应: {"error":{"message":"The model `bge-reranker-v2-m3` does not exist.","type":"NotFoundError","param":null,"code":404}}
+2025-11-20 10:03:21,790 - INFO - 重排序失败，使用前5个召回文档
+2025-11-20 10:03:21,790 - ERROR - RAG查询失败: name 'false' is not defined
+2025-11-20 10:03:21,790 - ERROR - 错误详情: Traceback (most recent call last):
+  File "/data/intention_correction/flask_api.py", line 189, in rag_query
+    response = service.rag_query(
+  File "/data/intention_correction/llm_milvuslite.py", line 569, in rag_query
+    response = self.call_llm(rag_prompt, temperature)
+  File "/data/intention_correction/llm_milvuslite.py", line 272, in call_llm
+    "chat_template_kwargs": {"enable_thinking": False}
+NameError: name 'false' is not defined
+
+2025-11-20 10:03:21,790 - INFO - 127.0.0.1 - - [20/Nov/2025 10:03:21] "[35m[1mPOST /rag_query HTTP/1.1[0m" 500 -

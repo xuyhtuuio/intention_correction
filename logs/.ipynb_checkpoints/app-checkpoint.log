@@ -1,0 +1,15 @@
+2025-11-17 06:54:35,659 - INFO - 正在连接Milvus: 127.0.0.1:54104
+2025-11-17 06:54:45,779 - ERROR - 连接Milvus失败: <MilvusException: (code=2, message=Fail connecting to server on 127.0.0.1:54104, illegal connection params or server unavailable)>
+2025-11-17 06:54:45,779 - ERROR - 可能的原因: 
+1. 网络连接问题
+2. 认证信息错误
+3. 集合不存在
+4. Milvus服务未启动
+2025-11-17 06:54:45,780 - ERROR - 加载JSON文件 user_features.json 失败: [Errno 2] No such file or directory: 'user_features.json'
+2025-11-17 06:54:45,780 - ERROR - 加载JSON文件 top_k_risk_descriptions.json 失败: [Errno 2] No such file or directory: 'top_k_risk_descriptions.json'
+2025-11-17 06:54:45,781 - ERROR - Milvus集合未初始化
+2025-11-17 07:40:32,923 - INFO - 正在连接Milvus Lite数据库: ./milvus.db
+2025-11-17 07:40:33,458 - ERROR - 集合 'intention' 不存在
+2025-11-17 07:40:33,459 - ERROR - 加载JSON文件 user_features.json 失败: [Errno 2] No such file or directory: 'user_features.json'
+2025-11-17 07:40:33,459 - ERROR - 加载JSON文件 top_k_risk_descriptions.json 失败: [Errno 2] No such file or directory: 'top_k_risk_descriptions.json'
+2025-11-17 07:40:33,459 - ERROR - Milvus Lite集合未初始化

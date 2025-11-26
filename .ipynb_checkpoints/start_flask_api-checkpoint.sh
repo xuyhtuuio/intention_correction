@@ -1,0 +1,1 @@
+nohup gunicorn --workers 4 --bind 0.0.0.0:5000 --timeout 300 --log-level info flask_api:app > ./logs/gunicorn.log 2>&1 &

@@ -1,0 +1,6 @@
+curl -X POST http://localhost:8890/rag_query   -H "Content-Type: application/json"   -d '{
+    "query": "我想找一个资产，我记得是总部软研院的，而且是DWD的，这个资产是哪个？",
+    "top_k": 5,
+    "temperature": 0.7,
+    "chat_template_kwargs": {"enable_thinking": false}
+  }'

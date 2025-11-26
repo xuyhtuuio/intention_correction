@@ -1,0 +1,1 @@
+"{\"intent\": \"50\", \"slots\": [{\"intent\": \"34\", \"slots\": {\"AssetName\": \"智慧家庭工程师信息\", \"LineageDirection\": \"上游\"}}, {\"intent\": \"32\", \"slots\": {\"AssetName\": \"智慧家庭工程师信息\", \"MetadataItem\": \"负责人\"}}, {\"intent\": \"33\", \"slots\": {\"AssetName\": \"智慧家庭工程师信息\"}}], \"query\": \"智慧家庭工程师信息的上游依赖,它的负责人是谁,还有价值评分多少\"}"

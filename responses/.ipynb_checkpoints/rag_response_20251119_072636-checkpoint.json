@@ -1,0 +1,5 @@
+{
+  "query": "HR系统上游依赖有哪些？",
+  "response": "{\"intent\": \"34\", \"slots\": {\"AssetName\": \"HR系统\", \"LineageDirection\": \"上游\"}, \"query\": \"HR系统上游依赖有哪些？\"}",
+  "timestamp": "2025-11-19T07:26:36.198949"
+}

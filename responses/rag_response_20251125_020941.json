@@ -1,0 +1,1 @@
+"{\"intent\": \"50\", \"slots\": [{\"intent\": \"31\", \"slots\": {\"AssetName\": \"资产A\"}}, {\"intent\": \"31\", \"slots\": {\"AssetName\": \"资产B\"}}], \"query\": \"我要查询资产A和资产B的资产\"}"

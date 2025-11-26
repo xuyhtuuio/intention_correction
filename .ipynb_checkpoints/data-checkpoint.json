@@ -1,0 +1,860 @@
+[
+{
+"input": "查询智慧家庭工程师信息这个资产",
+"output": {
+"intent": "31",
+"slots": {
+"AssetName": "智慧家庭工程师信息"
+},
+"query": "查询智慧家庭工程师信息这个资产"
+}
+},
+{
+"input": "M域的所有标签资产",
+"output": {
+"intent": "31",
+"slots": {
+"BusinessDomain": "M域",
+"AssetType": "标签"
+},
+"query": "M域的所有标签资产"
+}
+},
+{
+"input": "平台上有哪些五星资产？",
+"output": {
+"intent": "31",
+"slots": {
+"FilterCondition": "五星"
+},
+"query": "平台上有哪些五星资产？"
+}
+},
+{
+"input": "总部租户的资产有哪些",
+"output": {
+"intent": "31",
+"slots": {
+"OwnerTenant": "总部"
+},
+"query": "总部租户的资产有哪些"
+}
+},
+{
+"input": "查找标签资产",
+"output": {
+"intent": "31",
+"slots": {
+"AssetType": "标签"
+},
+"query": "查找标签资产"
+}
+},
+{
+"input": "O域的数据表",
+"output": {
+"intent": "31",
+"slots": {
+"BusinessDomain": "O域",
+"AssetType": "数据表"
+},
+"query": "O域的数据表"
+}
+},
+{
+"input": "本周上新的资产",
+"output": {
+"intent": "31",
+"slots": {
+"AssetRanking": "本周上新"
+},
+"query": "本周上新的资产"
+}
+},
+{
+"input": "订阅最多的资产",
+"output": {
+"intent": "31",
+"slots": {
+"AssetRanking": "订阅最多"
+},
+"query": "订阅最多的资产"
+}
+},
+{
+"input": "日更新周期的资产",
+"output": {
+"intent": "31",
+"slots": {
+"FilterCondition": "日更新"
+},
+"query": "日更新周期的资产"
+}
+},
+{
+"input": "公共开放的资产",
+"output": {
+"intent": "31",
+"slots": {
+"FilterCondition": "公共开放"
+},
+"query": "公共开放的资产"
+}
+},
+{
+"input": "非敏感等级的资产",
+"output": {
+"intent": "31",
+"slots": {
+"FilterCondition": "非敏感等级"
+},
+"query": "非敏感等级的资产"
+}
+},
+{
+"input": "DWD层的资产",
+"output": {
+"intent": "31",
+"slots": {
+"DataLayer": "DWD"
+},
+"query": "DWD层的资产"
+}
+},
+{
+"input": "固网视图的资产",
+"output": {
+"intent": "31",
+"slots": {
+"DataDomain": "固网视图"
+},
+"query": "固网视图的资产"
+}
+},
+{
+"input": "ESD层的所有资产",
+"output": {
+"intent": "31",
+"slots": {
+"DataLayer": "ESD"
+},
+"query": "ESD层的所有资产"
+}
+},
+{
+"input": "月更新的资产有哪些",
+"output": {
+"intent": "31",
+"slots": {
+"FilterCondition": "月更新"
+},
+"query": "月更新的资产有哪些"
+}
+},
+{
+"input": "存储量大于100GB的资产",
+"output": {
+"intent": "31",
+"slots": {
+"FilterCondition": "存储量>100GB"
+},
+"query": "存储量大于100GB的资产"
+}
+},
+{
+"input": "四星资产有哪些",
+"output": {
+"intent": "31",
+"slots": {
+"FilterCondition": "四星"
+},
+"query": "四星资产有哪些"
+}
+},
+{
+"input": "高价值资产列表",
+"output": {
+"intent": "31",
+"slots": {
+"FilterCondition": "高价值"
+},
+"query": "高价值资产列表"
+}
+},
+{
+"input": "质量评分大于90的资产",
+"output": {
+"intent": "31",
+"slots": {
+"FilterCondition": "质量评分>90"
+},
+"query": "质量评分大于90的资产"
+}
+},
+{
+"input": "最新上架的资产",
+"output": {
+"intent": "31",
+"slots": {
+"AssetRanking": "最新"
+},
+"query": "最新上架的资产"
+}
+},
+{
+"input": "家庭圈模型的负责人是谁？",
+"output": {
+"intent": "32",
+"slots": {
+"AssetName": "家庭圈模型",
+"MetadataItem": "负责人"
+},
+"query": "家庭圈模型的负责人是谁？"
+}
+},
+{
+"input": "家庭宽带网络质量数据是干什么用的？",
+"output": {
+"intent": "32",
+"slots": {
+"AssetName": "家庭宽带网络质量数据",
+"MetadataItem": "简介/用途"
+},
+"query": "家庭宽带网络质量数据是干什么用的？"
+}
+},
+{
+"input": "家庭宽带网络质量数据的业务口径是什么？",
+"output": {
+"intent": "32",
+"slots": {
+"AssetName": "家庭宽带网络质量数据",
+"MetadataItem": "业务口径"
+},
+"query": "家庭宽带网络质量数据的业务口径是什么？"
+}
+},
+{
+"input": "这个资产的技术口径",
+"output": {
+"intent": "32",
+"slots": {
+"MetadataItem": "技术口径"
+},
+"query": "这个资产的技术口径"
+}
+},
+{
+"input": "智慧家庭工程师信息的数据更新周期",
+"output": {
+"intent": "32",
+"slots": {
+"AssetName": "智慧家庭工程师信息",
+"MetadataItem": "数据更新周期"
+},
+"query": "智慧家庭工程师信息的数据更新周期"
+}
+},
+{
+"input": "家庭圈模型的存储量是多少",
+"output": {
+"intent": "32",
+"slots": {
+"AssetName": "家庭圈模型",
+"MetadataItem": "存储量"
+},
+"query": "家庭圈模型的存储量是多少"
+}
+},
+{
+"input": "上海家庭视图标签信息的负责人",
+"output": {
+"intent": "32",
+"slots": {
+"AssetName": "上海家庭视图标签信息",
+"MetadataItem": "负责人"
+},
+"query": "上海家庭视图标签信息的负责人"
+}
+},
+{
+"input": "上海家庭视图标签信息是干什么的",
+"output": {
+"intent": "32",
+"slots": {
+"AssetName": "上海家庭视图标签信息",
+"MetadataItem": "简介/用途"
+},
+"query": "上海家庭视图标签信息是干什么的"
+}
+},
+{
+"input": "家庭圈模型的版本号",
+"output": {
+"intent": "32",
+"slots": {
+"AssetName": "家庭圈模型",
+"MetadataItem": "版本"
+},
+"query": "家庭圈模型的版本号"
+}
+},
+{
+"input": "智慧家庭工程师信息的状态",
+"output": {
+"intent": "32",
+"slots": {
+"AssetName": "智慧家庭工程师信息",
+"MetadataItem": "状态"
+},
+"query": "智慧家庭工程师信息的状态"
+}
+},
+{
+"input": "家庭宽带网络质量数据的数据具备时间",
+"output": {
+"intent": "32",
+"slots": {
+"AssetName": "家庭宽带网络质量数据",
+"MetadataItem": "数据具备时间"
+},
+"query": "家庭宽带网络质量数据的数据具备时间"
+}
+},
+{
+"input": "这个资产归属哪个组织",
+"output": {
+"intent": "32",
+"slots": {
+"MetadataItem": "归属组织"
+},
+"query": "这个资产归属哪个组织"
+}
+},
+{
+"input": "资产的分类分级是什么",
+"output": {
+"intent": "32",
+"slots": {
+"MetadataItem": "分类分级"
+},
+"query": "资产的分类分级是什么"
+}
+},
+{
+"input": "查看资产的开放范围",
+"output": {
+"intent": "32",
+"slots": {
+"MetadataItem": "资产开放范围"
+},
+"query": "查看资产的开放范围"
+}
+},
+{
+"input": "这个资产的归属项目",
+"output": {
+"intent": "32",
+"slots": {
+"MetadataItem": "归属项目"
+},
+"query": "这个资产的归属项目"
+}
+},
+{
+"input": "资产发布人是谁",
+"output": {
+"intent": "32",
+"slots": {
+"MetadataItem": "资产发布人"
+},
+"query": "资产发布人是谁"
+}
+},
+{
+"input": "数据存储周期多长",
+"output": {
+"intent": "38",
+"slots": {},
+"query": "数据存储周期多长"
+}
+},
+{
+"input": "张三负责哪些资产",
+"output": {
+"intent": "31",
+"slots": {
+"AssertAdmin": "张三"
+},
+"query": "张三负责哪些资产"
+}
+},
+{
+"input": "李四发布的资产有哪些",
+"output": {
+"intent": "31",
+"slots": {
+"AssertPublisher": "李四"
+},
+"query": "李四发布的资产有哪些"
+}
+},
+{
+"input": "家庭圈模型的价值评分是多少？",
+"output": {
+"intent": "33",
+"slots": {
+"AssetName": "家庭圈模型",
+"MetadataItem": "价值评估分数"
+},
+"query": "家庭圈模型的价值评分是多少？"
+}
+},
+{
+"input": "这个资产的星级是多少？",
+"output": {
+"intent": "33",
+"slots": {
+"MetadataItem": "星级"
+},
+"query": "这个资产的星级是多少？"
+}
+},
+{
+"input": "家庭宽带网络质量数据的质量稽核有什么问题？",
+"output": {
+"intent": "33",
+"slots": {
+"AssetName": "家庭宽带网络质量数据",
+"MetadataItem": "质量稽核"
+},
+"query": "家庭宽带网络质量数据的质量稽核有什么问题？"
+}
+},
+{
+"input": "家庭圈模型的质量怎么样",
+"output": {
+"intent": "33",
+"slots": {
+"AssetName": "家庭圈模型",
+"MetadataItem": "质量"
+},
+"query": "家庭圈模型的质量怎么样"
+}
+},
+{
+"input": "智慧家庭工程师信息的价值如何",
+"output": {
+"intent": "33",
+"slots": {
+"AssetName": "智慧家庭工程师信息",
+"MetadataItem": "价值"
+},
+"query": "智慧家庭工程师信息的价值如何"
+}
+},
+{
+"input": "上海家庭视图标签信息的星级评定",
+"output": {
+"intent": "33",
+"slots": {
+"AssetName": "上海家庭视图标签信息",
+"MetadataItem": "星级"
+},
+"query": "上海家庭视图标签信息的星级评定"
+}
+},
+{
+"input": "最近哪些资产的价值评分上升了？",
+"output": {
+"intent": "33",
+"slots": {
+"FilterCondition": "最近上升",
+"MetadataItem": "价值评估分数"
+},
+"query": "最近哪些资产的价值评分上升了？"
+}
+},
+{
+"input": "智慧家庭工程师信息的上游依赖有哪些？",
+"output": {
+"intent": "34",
+"slots": {
+"AssetName": "智慧家庭工程师信息",
+"LineageDirection": "上游"
+},
+"query": "智慧家庭工程师信息的上游依赖有哪些？"
+}
+},
+{
+"input": "智慧家庭工程师信息的血缘图",
+"output": {
+"intent": "34",
+"slots": {
+"AssetName": "智慧家庭工程师信息",
+"MetadataItem": "血缘图"
+},
+"query": "智慧家庭工程师信息的血缘图"
+}
+},
+{
+"input": "这个资产的下游应用是什么?",
+"output": {
+"intent": "34",
+"slots": {
+"LineageDirection": "下游"
+},
+"query": "这个资产的下游应用是什么?"
+}
+},
+{
+"input": "家庭宽带网络质量数据的数据来源",
+"output": {
+"intent": "34",
+"slots": {
+"AssetName": "家庭宽带网络质量数据",
+"MetadataItem": "数据来源"
+},
+"query": "家庭宽带网络质量数据的数据来源"
+}
+},
+{
+"input": "上海家庭视图标签信息的上游是什么",
+"output": {
+"intent": "34",
+"slots": {
+"AssetName": "上海家庭视图标签信息",
+"LineageDirection": "上游"
+},
+"query": "上海家庭视图标签信息的上游是什么"
+}
+},
+{
+"input": "家庭圈模型的下游资产",
+"output": {
+"intent": "34",
+"slots": {
+"AssetName": "家庭圈模型",
+"LineageDirection": "下游"
+},
+"query": "家庭圈模型的下游资产"
+}
+},
+{
+"input": "这个资产依赖哪些数据",
+"output": {
+"intent": "34",
+"slots": {
+"LineageDirection": "上游"
+},
+"query": "这个资产依赖哪些数据"
+}
+},
+{
+"input": "资产的血缘关系",
+"output": {
+"intent": "34",
+"slots": {
+"MetadataItem": "血缘关系"
+},
+"query": "资产的血缘关系"
+}
+},
+{
+"input": "我订阅的资产有哪些？",
+"output": {
+"intent": "35",
+"slots": {
+"UserStatus": "我订阅的"
+},
+"query": "我订阅的资产有哪些？"
+}
+},
+{
+"input": "我收藏的五星资产",
+"output": {
+"intent": "35",
+"slots": {
+"UserStatus": "我收藏的",
+"FilterCondition": "五星"
+},
+"query": "我收藏的五星资产"
+}
+},
+{
+"input": "家庭圈模型的工单进度如何？",
+"output": {
+"intent": "35",
+"slots": {
+"AssetName": "家庭圈模型",
+"MetadataItem": "工单进度"
+},
+"query": "家庭圈模型的工单进度如何？"
+}
+},
+{
+"input": "这个资产有多少人订阅？",
+"output": {
+"intent": "35",
+"slots": {
+"MetadataItem": "订阅数"
+},
+"query": "这个资产有多少人订阅？"
+}
+},
+{
+"input": "我创建的资产列表",
+"output": {
+"intent": "35",
+"slots": {
+"UserStatus": "我创建的"
+},
+"query": "我创建的资产列表"
+}
+},
+{
+"input": "我负责的资产",
+"output": {
+"intent": "35",
+"slots": {
+"UserStatus": "我负责的"
+},
+"query": "我负责的资产"
+}
+},
+{
+"input": "我最近访问的资产",
+"output": {
+"intent": "35",
+"slots": {
+"UserStatus": "我最近访问的"
+},
+"query": "我最近访问的资产"
+}
+},
+{
+"input": "我下载过的资产",
+"output": {
+"intent": "35",
+"slots": {
+"UserStatus": "我下载过的"
+},
+"query": "我下载过的资产"
+}
+},
+{
+"input": "智慧家庭工程师信息有多少人使用",
+"output": {
+"intent": "35",
+"slots": {
+"AssetName": "智慧家庭工程师信息",
+"MetadataItem": "使用数"
+},
+"query": "智慧家庭工程师信息有多少人使用"
+}
+},
+{
+"input": "家庭圈模型的工单数量",
+"output": {
+"intent": "35",
+"slots": {
+"AssetName": "家庭圈模型",
+"MetadataItem": "工单数"
+},
+"query": "家庭圈模型的工单数量"
+}
+},
+{
+"input": "这个资产的申请进度",
+"output": {
+"intent": "35",
+"slots": {
+"MetadataItem": "申请进度"
+},
+"query": "这个资产的申请进度"
+}
+},
+{
+"input": "身份属性热点相关的资产",
+"output": {
+"intent": "31",
+"slots": {
+"CoreDataItem": "身份属性"
+},
+"query": "身份属性热点相关的资产"
+}
+},
+{
+"input": "家庭关系相关的数据",
+"output": {
+"intent": "31",
+"slots": {
+"CoreDataItem": "家庭关系"
+},
+"query": "家庭关系相关的数据"
+}
+},
+{
+"input": "智慧双推运营场景需要什么数据？",
+"output": {
+"intent": "36",
+"slots": {
+"BusinessZone": "智慧双推运营"
+},
+"query": "智慧双推运营场景需要什么数据？"
+}
+},
+{
+"input": "聚焦融合场景相关资产",
+"output": {
+"intent": "36",
+"slots": {
+"BusinessZone": "聚焦融合"
+},
+"query": "聚焦融合场景相关资产"
+}
+},
+{
+"input": "移网终端相关资产",
+"output": {
+"intent": "31",
+"slots": {
+"CoreDataItem": "移网终端"
+},
+"query": "移网终端相关资产"
+}
+},
+{
+"input": "宽带终端数据有哪些",
+"output": {
+"intent": "31",
+"slots": {
+"CoreDataItem": "宽带终端"
+},
+"query": "宽带终端数据有哪些"
+}
+},
+{
+"input": "服务感知相关的资产",
+"output": {
+"intent": "31",
+"slots": {
+"CoreDataItem": "服务感知"
+},
+"query": "服务感知相关的资产"
+}
+},
+{
+"input": "家庭圈模型和家庭宽带网络质量数据的字段有什么不同？",
+"output": {
+"intent": "37",
+"slots": {
+"AssetName": [
+"家庭圈模型",
+"家庭宽带网络质量数据"
+],
+"MetadataItem": "字段"
+},
+"query": "家庭圈模型和家庭宽带网络质量数据的字段有什么不同？"
+}
+},
+{
+"input": "ESD层的公共资产",
+"output": {
+"intent": "31",
+"slots": {
+"BusinessDomain": "ESD",
+"AssetOpenScope": "公共"
+},
+"query": "ESD层的公共资产"
+}
+},
+{
+"input": "如何订阅资产？",
+"output": {
+"intent": "38",
+"slots": {},
+"query": "如何订阅资产？"
+}
+},
+{
+"input": "什么是数据资产？",
+"output": {
+"intent": "38",
+"slots": {},
+"query": "什么是数据资产？"
+}
+},
+{
+"input": "如何提交工单？",
+"output": {
+"intent": "38",
+"slots": {},
+"query": "如何提交工单？"
+}
+},
+{
+"input": "数据资产平台怎么使用？",
+"output": {
+"intent": "38",
+"slots": {},
+"query": "数据资产平台怎么使用？"
+}
+},
+{
+"input": "平台的联系人是谁？",
+"output": {
+"intent": "38",
+"slots": {},
+"query": "平台的联系人是谁？"
+}
+},
+{
+"input": "业务口径和技术口径的区别",
+"output": {
+"intent": "38",
+"slots": {},
+"query": "业务口径和技术口径的区别"
+}
+},
+{
+"input": "你是谁？能做什么？",
+"output": {
+"intent": "39",
+"slots": {},
+"query": "你是谁？能做什么？"
+}
+},
+{
+"input": "助手有哪些功能？",
+"output": {
+"intent": "39",
+"slots": {},
+"query": "助手有哪些功能？"
+}
+},
+{
+"input": "怎么使用这个助手？",
+"output": {
+"intent": "39",
+"slots": {},
+"query": "怎么使用这个助手？"
+}
+},
+{
+"input": "今天天气怎么样？",
+"output": {
+"intent": "40",
+"slots": {},
+"query": "今天天气怎么样？"
+}
+},
+{
+"input": "帮我写个笑话",
+"output": {
+"intent": "40",
+"slots": {},
+"query": "帮我写个笑话"
+}
+}
+]
