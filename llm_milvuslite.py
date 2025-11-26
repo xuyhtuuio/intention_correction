@@ -173,7 +173,7 @@ class RAGService:
             self.logger.error(f"获取嵌入向量异常: {e}")
             return None
 
-    def _search_similar_documents(self, query: str, top_k: int = 10) -> List[str]:
+    def _search_similar_documents(self, query: str, top_k: int = 10) -> List[Dict[str, Any]]:
         """
         从Milvus Lite搜索相似文档
 
@@ -182,7 +182,7 @@ class RAGService:
             top_k: 返回文档数量
 
         Returns:
-            相似文档列表
+            相似文档列表，每个元素包含 input 和 output 字段
         """
         if not self.milvus_collection:
             self.logger.warning("Milvus Lite集合未初始化，无法进行向量搜索")
@@ -216,24 +216,29 @@ class RAGService:
                 anns_field="embedding",
                 param=search_params,
                 limit=top_k,
-                output_fields=["input"]  # 假设文档内容字段名为content
+                output_fields=["input", "output"]  # 返回完整样本：查询文本和意图槽位
             )
 
-            # 提取文档内容
+            # 提取文档内容（包含 input 和 output）
             documents = []
             for hits in results:
                 for hit in hits:
+                    doc = {}
                     if hasattr(hit, 'entity') and hasattr(hit.entity, 'get'):
-                        content = hit.entity.get('input', '')
-                        if content:
-                            documents.append(content)
+                        input_text = hit.entity.get('input', '')
+                        output_text = hit.entity.get('output', '')
+                        if input_text:
+                            doc['input'] = input_text
+                            doc['output'] = output_text
+                            documents.append(doc)
                         else:
-                            self.logger.warning("命中结果中没有content字段")
-                    elif hasattr(hit, 'entity') and 'input' in hit.entity:
+                            self.logger.warning("命中结果中没有input字段")
+                    elif hasattr(hit, 'entity'):
                         # 兼容不同版本的pymilvus
-                        content = hit.entity['input']
-                        if content:
-                            documents.append(content)
+                        if 'input' in hit.entity:
+                            doc['input'] = hit.entity['input']
+                            doc['output'] = hit.entity.get('output', '')
+                            documents.append(doc)
 
             self.logger.info(f"向量搜索返回 {len(documents)} 个文档")
             return documents
@@ -616,32 +621,50 @@ Step 3: 按分隔符拆分成多个子查询
             return simple_ans
         
         self.logger.info(f"召回到 {len(retrieved_docs)} 个文档")
-        
+
         # 2. 使用Rerank对召回文档进行重排序
-        rerank_results = self.call_rerank(query, retrieved_docs)
-        
+        # Rerank API 需要字符串列表，提取 input 文本进行排序
+        input_texts = [doc['input'] for doc in retrieved_docs]
+        rerank_results = self.call_rerank(query, input_texts)
+
         # 3. 选择最相关的文档
         if rerank_results:
-            # 取前5个最相关的文档
-            top_docs = [result['document'] for result in rerank_results[:5]]
+            # 根据 rerank 结果的 index 获取对应的完整文档
+            top_docs = []
+            for result in rerank_results[:5]:
+                idx = result.get('index', 0)
+                if idx < len(retrieved_docs):
+                    top_docs.append(retrieved_docs[idx])
             self.logger.info(f"重排序后选择 {len(top_docs)} 个最相关文档")
         else:
             # 如果重排序失败，使用原始召回结果
             top_docs = retrieved_docs[:5]
             self.logger.info(f"重排序失败，使用前5个召回文档")
-        
-        # 4. 构建RAG提示词
-        context = "\n\n".join([f"参考信息 {i+1}: {doc}" for i, doc in enumerate(top_docs)])
+
+        # 4. 构建 Few-shot 上下文（包含输入和输出示例）
+        few_shot_examples = []
+        for i, doc in enumerate(top_docs):
+            input_text = doc.get('input', '')
+            output_text = doc.get('output', '')
+            # 确保 output 是字符串格式
+            if isinstance(output_text, dict):
+                output_text = json.dumps(output_text, ensure_ascii=False)
+            few_shot_examples.append(f"示例 {i+1}:\n用户查询: {input_text}\n正确输出: {output_text}")
+
+        context = "\n\n".join(few_shot_examples)
 
         rag_prompt = single_query + f"""
-        请根据以下参考信息回答用户的问题：
 
-        参考信息：
-        {context}
+【参考示例】
+以下是一些相似查询的正确识别结果，请参考这些示例来识别当前用户的查询意图：
 
-        用户问题：{query}
+{context}
 
-        请基于参考信息给出准确、简洁的回答。
+【当前用户查询】
+
+{query}
+
+请根据上述参考示例和意图清单，输出当前用户查询的意图识别结果（纯JSON格式）。
         """
         # 5. 调用大模型生成回答
         response = self.call_llm(rag_prompt, temperature, enable_thinking)
